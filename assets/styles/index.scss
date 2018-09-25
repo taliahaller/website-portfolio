@@ -10,9 +10,10 @@ html {
 }
 
 body {
-  overflow-y: scroll;
+  // overflow-y: scroll;
   margin: 0;
   padding: 0;
+  height: 110%;
 }
 
 img, video {
@@ -133,8 +134,6 @@ a, img, svg, video {
   }
 }
 
-
-
 #nav-logo-dark, #nav-explore-dark, #burger-dark {
   color: $navFill;
 }
@@ -142,4 +141,40 @@ a, img, svg, video {
 #nav-logo-light, #nav-explore-light, #burger-light {
   color: white;
   opacity: 0;
+}
+
+// Animation
+
+.scrolledFast {
+  animation: foreground 2s ease-in-out forwards;
+}
+
+.scrolledSlow {
+  animation: foreground 4s ease-in forwards;
+}
+
+.scrolledSmall {
+  animation: background 4s ease-in forwards;
+}
+
+@keyframes foreground {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes background {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

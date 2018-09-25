@@ -1,6 +1,7 @@
 // Colors
 $blue: #c2d4d9;
 $white: #f4f5f1;
+$navFill: #2b2d30;
 
 
 html {
@@ -13,6 +14,21 @@ body {
   margin: 0;
   padding: 0;
 }
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a, img, svg, video {
+  display: block;
+}
+// Not sure how this will affect all elements
 
 #h, #h-header {
   overflow: hidden;
@@ -27,14 +43,19 @@ body {
   background-position: 50%;
   background-image: url(./../images/00.jpg);
   background-repeat: no-repeat;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 #h-header-title-wrap {
   position: absolute;
-  bottom: 20.9vw;
+  bottom: 14vw;
   left: 7.5vw;
-  font-size: 13vw;
-  letter-spacing: -.01em;
+  font-size: 12vw;
+  letter-spacing: -.02em;
   line-height: 85%;
 }
 
@@ -43,6 +64,82 @@ body {
   // Unsure what float is doing
   background-image: linear-gradient(180deg, $blue, $white);
   color: transparent;
-  webkit-background-clip: text;
+  -webkit-background-clip: text;
   background-clip: text;
+}
+
+#h-header-background-wrap, #h-header-center-wrap, #h-header-foreground-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#nav-logo {
+  position: fixed;
+  z-index: 1;
+  top: 27px;
+  left: 76px;
+  width: 160px;
+  height: 33px;
+    div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    i {
+    font-size: 35px;
+    width: 30px;
+    padding-right: 15px;
+    }
+    p {
+      width: 60px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+  }
+}
+
+#nav-burger {
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 30px;
+  width: 200px;
+  height: 70px;
+  #nav-explore-wrap {
+
+    #nav-explore {
+      div {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        font-size: 13px;
+        letter-spacing: .2em;
+      }
+    }
+  }
+  #nav-burger-line-container {
+    div{
+    position: absolute;
+    right: 50px;
+    top: 35px;
+    font-size: 30px;
+    }
+  }
+}
+
+
+
+#nav-logo-dark, #nav-explore-dark, #burger-dark {
+  color: $navFill;
+}
+
+#nav-logo-light, #nav-explore-light, #burger-light {
+  color: white;
+  opacity: 0;
 }

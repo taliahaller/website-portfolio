@@ -1,39 +1,42 @@
-Webpack 4 Boilerplate
-===========
+# Personal Portfolio Site
 
-[![Dependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate) 
-[![devDependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate/dev-status.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate)
+#### Showcase and advertise our web design skills, 25 September 2018.
+#### By Talia & Julianne
 
-> Plain webpack 4 boilerplate with Babel, SASS and lodash on board
+## Description
 
-## Requirements
-You only need <b>node.js</b> pre-installed and you’re good to go. 
+A personal portfolio site that includes animation and JS scrolling effects to create an interactive, dynamic user experience.
 
-If you don’t want to work with lodash, just remove it from the node packages and the webpack config.
+## Setup/Installation Requirements
 
-## Download
-Download in current directory
-```sh
-$ curl -L -o master.zip https://github.com/cvgellhorn/webpack-boilerplate/archive/master.zip && unzip master.zip && rm master.zip && mv ./webpack-boilerplate-master/{.,}* ./ && rm -r ./webpack-boilerplate-master
-```
+    This webpage requires installation.
+    1. Clone the repository in the terminal, using the "git clone" command.
+    2. CD into the directory of interest.
+    3. In the terminal, run the command: "npm install".
+    4. Then run the command to initialize the npm: "npm init -y".
+    5. With everything installed, run the command to load the site: "npm run start". A website with the site will show up.
 
-## Setup
-Install dependencies
-```sh
-$ npm install
-```
 
-## Development
-Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
-```sh
-$ npm run dev
-```
-## Deployment
-Build the current application
-```sh
-$ npm run build
-```
+## Bugs
 
-## [webpack](https://webpack.js.org/)
-If you're not familiar with webpack, the [webpack-dev-server](https://webpack.js.org/configuration/dev-server/) will serve the static files in your build folder and watch your source files for changes.
-When changes are made the bundle will be recompiled. This modified bundle is served from memory at the relative path specified in publicPath.
+No known bugs.
+
+## Support and contact details
+
+Please email taliahaller@gmail.com if an issue arises or if you have questions about the site.
+
+## Technologies Used
+
+    HTML
+    Bootstrap
+    CSS
+    Atom
+    JS
+    JQuery
+    Webpack
+
+## License
+
+Public Domain
+
+Copyright (c) 2018 Talia & Julianne.

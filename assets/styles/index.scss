@@ -2,6 +2,8 @@
 $blue: #c2d4d9;
 $white: #f4f5f1;
 $navFill: #2b2d30;
+$aboutbg: #212121;
+$linecolor: #a52c52;
 
 
 html {
@@ -142,6 +144,87 @@ a, img, svg, video {
   color: white;
   opacity: 0;
 }
+
+
+// About header
+
+#h-intro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-align: center;
+  justify-content: center;
+  background: $aboutbg;
+}
+
+#h-intro-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  video {
+    object-fit: contain;
+  }
+}
+
+#h-intro-txt {
+  position: relative;
+  margin: 0 0 0 -1.825vw;
+  color: white;
+  .title-light {
+    color: white;
+  }
+  .title-marge-m {
+    margin: 0 0 0 -3.65vw
+  }
+  .title-l {
+    font-size: 4.16vw;
+  }
+  .title {
+    line-height: 113%;
+  }
+}
+
+.line-wrap {
+  position: relative;
+  margin: 1.98vw 0 0;
+  width: 2.6vw;
+  height: 2px;
+  overflow: hidden;
+  .line-red {
+    color: $linecolor;
+  }
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.p-light {
+  color: white;
+}
+
+.p-l {
+  font-size: 1.0416vw;
+  letter-spacing: -.075em;
+  line-height: 200%;
+}
+
+.p-l, .p-m {
+  margin: 2.083vw 0 0;
+}
+
+
 
 // Animation
 

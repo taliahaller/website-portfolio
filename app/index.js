@@ -4,7 +4,7 @@
 
 // Load application styles
 import 'styles/index.scss';
-
+import video from '../assets/images/video.mp4';
 // ================================
 // START YOUR APP HERE
 // ================================

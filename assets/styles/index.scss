@@ -6,8 +6,10 @@ $aboutbg: #212121;
 $linecolor: #a52c52;
 
 
+
+
 html {
-  font-family: "Hiragino sans";
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 }
 
@@ -32,6 +34,10 @@ a, img, svg, video {
   display: block;
 }
 // Not sure how this will affect all elements
+
+p {
+  font-family: "Hiragino sans";
+}
 
 #h, #h-header {
   overflow: hidden;
@@ -174,8 +180,20 @@ a, img, svg, video {
   }
 }
 
+#h-intro-sail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.7);
+}
+
 #h-intro-txt {
   position: relative;
+  height: 150px;
+  top: 550px;
+  left: -100px;
   margin: 0 0 0 -1.825vw;
   color: white;
   .title-light {
@@ -186,20 +204,22 @@ a, img, svg, video {
   }
   .title-l {
     font-size: 4.16vw;
+    font-weight: 500;
+    letter-spacing: .03em;
   }
   .title {
-    line-height: 113%;
+    line-height: 150%;
   }
 }
 
 .line-wrap {
   position: relative;
   margin: 1.98vw 0 0;
-  width: 2.6vw;
+  width: 50px;
   height: 2px;
   overflow: hidden;
   .line-red {
-    color: $linecolor;
+    background-color: $linecolor;
   }
   .line {
     position: absolute;
@@ -215,9 +235,10 @@ a, img, svg, video {
 }
 
 .p-l {
-  font-size: 1.0416vw;
-  letter-spacing: -.075em;
+  font-size: 1.5vw;
+  letter-spacing: 0.02em;
   line-height: 200%;
+  font-weight: 100;
 }
 
 .p-l, .p-m {

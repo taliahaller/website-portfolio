@@ -386,6 +386,46 @@ p {
   }
 }
 
+#h-blog-drag {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  .portfolio-image {
+    min-width: 320px;
+    width: 30%;
+    height: auto;
+    overflow: hidden;
+    img {
+      object-fit: contain;
+
+    }
+  }
+}
+
+
+// Footer
+footer {
+  width: 100%;
+  background-color: $dark;
+  padding: 3%;
+  color: white;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 19px;
+  color: white;
+}
+
+.fa:hover {
+  color: $linecolor;
+  text-decoration: none;
+}
+
 
 
 

@@ -6,7 +6,22 @@ $aboutbg: #212121;
 $linecolor: #a52c52;
 $dark: #212322;
 
-
+// Mixins
+@mixin logo-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    i {
+    font-size: 35px;
+    width: 30px;
+  }
+  p {
+    width: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+}
 
 html {
   font-family: 'Montserrat', sans-serif;
@@ -94,25 +109,15 @@ p {
   width: 160px;
   height: 33px;
     div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    i {
-    font-size: 35px;
-    width: 30px;
-    padding-right: 15px;
-    }
-    p {
-      width: 60px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
+      @include logo-style;
+      position: absolute;
+      top: 0;
+      left: 0;
+      i {
+        padding-right: 15px;
+      }
     }
   }
-}
 
 #nav-burger {
   position: fixed;
@@ -360,10 +365,6 @@ p {
   right: 0;
 }
 
-// .btn:hover + .btn-cover{
-//     display: block;
-//   }
-
 #h-blog {
   position: relative;
   margin: -1px 0 0;
@@ -449,8 +450,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin-left: 40px;
-
     border: none;
     border-bottom: 2px solid $dark;
     input {
@@ -462,30 +461,57 @@ p {
       width: 100%;
     }
     img {
-      width: calc(15px + 1vw;
+      width: calc(15px + 1vw);
       height: auto;
     }
   }
 }
 
-
-// // Footer
+// Footer
 footer {
   width: 100%;
   background-color: $dark;
-  // padding: 3%;
   color: white;
-}
-//
-.fa {
-  padding: 15px;
-  font-size: 19px;
-  color: white;
-}
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 30px 0;
+  flex-wrap: wrap;
+  .footer-column {
+    text-align: center;
+    min-width: 200px;
+    h3 {
+      font-size: 1.2em;
+      margin-block-end: .5em;
+    }
+    h5 {
+      line-height: 200%;
+      letter-spacing: 1px;
+      margin-block-start: 0em;
+      font-weight: 100;
+    }
+  }
+  #footer-logo {
+    div {
+      @include logo-style;
+      color: white;
 
-.fa:hover {
-  color: $linecolor;
-  text-decoration: none;
+    }
+  }
+  .socialIcons {
+    display: flex;
+
+  }
+  i {
+    padding: 10px 15px;
+    font-size: 19px;
+    color: white;
+  }
+
+  i:hover {
+    color: lighten($linecolor, 30%);
+    text-decoration: none;
+  }
 }
 
 

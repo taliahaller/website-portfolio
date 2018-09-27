@@ -23,6 +23,16 @@ $dark: #212322;
   }
 }
 
+@mixin scrollAnimate2 {
+  transition: transform .25s, opacity 1s;
+  transition-timing-function: ease-out;
+}
+@mixin scrollAnimate {
+  transition: transform .25s, opacity .25s;
+  transition-timing-function: ease-out;
+}
+
+
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -33,14 +43,8 @@ body {
   padding: 0;
   height: 110%;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 }
-
-
-
-//  .enableScroll {
-// overflow: visible;
-//  }
 
 img, video {
   width: 100%;
@@ -61,19 +65,49 @@ p {
   font-family: "Hiragino sans";
 }
 
-#h, #h-header {
-  overflow: hidden;
+#dummyParent {
+
+}
+
+#h-header-foreground-wrap, #h-header-center-wrap, #-header-background-wrap {
+  @include scrollAnimate;
+}
+
+#h-header {
+ @include scrollAnimate2;
+}
+
+#h {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 17px;
+  box-sizing: content-box;
+  z-index: 1;
+  // opacity: 0;
+}
+
+.child-container {
+  height: 3500px;
+  width: 100%;
+  position: absolute;
+  overflow:hidden;
+  background-color: rgba(0,0,0,0);
+  z-index: -1;
 }
 
 #h-header {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: 50%;
   background-image: url(./../images/00.jpg);
   background-repeat: no-repeat;
+  overflow: hidden;
   img {
     position: absolute;
     bottom: 0;
@@ -107,6 +141,22 @@ p {
   right: 0;
 }
 
+.navBar {
+width: 100%;
+height: 80px;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
+}
+
+.scrolled {
+  background-color: $dark;
+  #nav-logo, #nav-burger {
+    animation: scale 1s ease-in forwards;
+  }
+}
+
 #nav-logo {
   position: fixed;
   z-index: 1;
@@ -114,6 +164,7 @@ p {
   left: 76px;
   width: 160px;
   height: 33px;
+  color: white;
     div {
       @include logo-style;
       position: absolute;
@@ -127,22 +178,18 @@ p {
 
 #nav-burger {
   position: fixed;
+  color: white;
   z-index: 1;
   top: 10px;
   right: 30px;
   width: 200px;
   height: 70px;
   #nav-explore-wrap {
-
-    #nav-explore {
-      div {
-        position: absolute;
-        top: 50px;
-        left: 20px;
-        font-size: 13px;
-        letter-spacing: .2em;
-      }
-    }
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    font-size: 13px;
+    letter-spacing: .2em;
   }
   #nav-burger-line-container {
     div{
@@ -154,17 +201,12 @@ p {
   }
 }
 
-#nav-logo-dark, #nav-explore-dark, #burger-dark {
-  color: $navFill;
-}
-
-#nav-logo-light, #nav-explore-light, #burger-light {
-  color: white;
-  opacity: 0;
-}
-
 
 // About header
+
+#h-content {
+  position: absolute;
+}
 
 #h-intro {
   position: relative;
@@ -525,8 +567,8 @@ footer {
 
 // Animation
 
-.scrollToggle {
-  animation: scrollToggle 1s 5s linear forwards;
+.scale {
+  animation: scale 3s ease-in forwards;
 }
 
 .scrolledFast {
@@ -580,14 +622,12 @@ footer {
 }
 
 
-@keyframes background1 {
+@keyframes scale {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1) translateY(0px);
   }
   100% {
-    transform: scale(1.5);
-    opacity: 0;
+    transform: scale(0.7) translateY(-30px);
   }
 }
 

@@ -9,6 +9,7 @@
 </head>
 <body class="scrollToggle">
 
+<div class="dummyParent">
 
 <!-- Landing Page -->
 <div id="h">
@@ -26,36 +27,33 @@
       <img id="h-header-foreground" src="assets/images/talia.png">
     </div>
   </div>
+    <div class="child-container"></div>
 </div>
 
+<div class="navBar">
   <a id="nav-logo" href="index.html">
-    <div id="nav-logo-dark">
-      <i class="fas fa-globe-asia"></i>
-      <p>J & T Designs</p>
-    </div>
-    <div id="nav-logo-light">
+    <div>
       <i class="fas fa-globe-asia"></i>
       <p>J & T Designs</p>
     </div>
   </a>
-
-  <div id="nav-burger" class="test">
+  <div id="nav-burger">
     <div id="nav-explore-wrap">
-      <div id="nav-explore">
-        <div id="nav-explore-dark">EXPLORE
-        </div>
-        <div id="nav-explore-light">EXPLORE
-        </div>
-      </div>
+        EXPLORE
     </div>
     <div id="nav-burger-line-container">
-      <div id="burger-dark"><i class="fas fa-bars"></i></div>
-      <div id="burger-light"><i class="fas fa-bars"></i></div>
+      <div class="nav nav-color-dark"><i class="fas fa-bars"></i></div>
     </div>
   </div>
+</div>
+
+
+
+
+
 
   <!-- Background Page -->
-  <div id="h-content disableScroll" class="page-height">
+  <div id="h-content" class="page-height">
     <section id="h-intro">
       <video autoplay id="h-intro-video" src="assets/images/video.mp4" loop="loop" muted></video>
       <div id="h-intro-sail"></div>
@@ -170,5 +168,7 @@
         </div>
       </footer>
     </div>
+
+  </div>
   </body>
 </html>

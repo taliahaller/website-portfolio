@@ -11,78 +11,112 @@ import video from '../assets/images/video.mp4';
 import $ from 'jquery';
 
 
+function getopacity(elem) {
+  var ori = $(elem).css('opacity');
+  var ori2 = $(elem).css('filter');
+  if (ori2) {
+    ori2 = parseInt( ori2.replace(')','').replace('alpha(opacity=','') ) / 100;
+    if (!isNaN(ori2) && ori2 != '') {
+      ori = ori2;
+    }
+  }
+  return ori;
+}
+
+
 $(document).ready(function(){
 
-  $('html').bind('wheel', function(e){
-    console.log(e);
-    var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-    if(e.originalEvent.deltaY < -200) {
-      console.log("time to scroll vertical")
+var iScrollPos = 0;
+
+$("#h").scroll(function() {
+  var iCurScrollPos = $(this).scrollTop();
+  iScrollPos = iCurScrollPos;
+  var windowHeight = $("#h").height();
+  var scrollPercent = iCurScrollPos / (5000 - windowHeight);
+  console.log(iScrollPos + "iScrollPos");
+
+
+    $("#h-header").css("opacity" , (1-(scrollPercent*1.54)));
+    $("#h-header-foreground-wrap").css("transform" , "translateX(" + (scrollPercent*900) + "px)    scale(" + (1+(1*scrollPercent)) + ")");
+    $("#h-header-center-wrap").css("transform", "translateX(-" + (scrollPercent*700) + "px) scale(" + (1+(1*scrollPercent)) + ")");
+    $("#h-header-background-wrap").css("transform", "translateX(" + (20 * scrollPercent) + "px) scale(" + (1+(.33*scrollPercent)) + ")");
+    $("#h-header-center-wrap").css("opacity" , (1-(scrollPercent*1.54)));
+    $("#h-header-foreground-wrap").css("opacity" , (1-(scrollPercent*2)));
+    console.log((1-scrollPercent));
+    if (scrollPercent >= 1) {
+      $("#h-header").css("opacity", 0);
     }
-    else {
-      console.log("scroll for depth");
+  });
 
-       if (delta < 121) {
-         console.log('scrolling up !');
+$(window).scroll(function() {
+    var iCurScrollPos = $(this).scrollTop();
+    if (iCurScrollPos === 0) {
+      $("#h-header").css("opacity", 1);
+    } else {
+      $("#h-header").css("opacity", 0);
+      $(".nav-color-dark").addClass(".nav-color-light");
+      $(".nav").removeClass(".nav-color-dark");
+    }
+    console.log(iCurScrollPos + "iCurScrollPos");
 
-                // if (delta < 121 && x==="true") {
-         $("#h-header").addClass("scrolledHeaderBackground");
-            $("#h-header-title").addClass("scrolledAdventure");
-            $("#h-header-background").addClass("scrolledMtnBackground");
-           $("#h-header-foreground").addClass("scrolledFast");
-            $("#h-header-center").addClass("scrolledSlow");
-            $("#h-header-title-wrap").addClass("scrolledSmall");
-       } else if (delta > 121) {
-           console.log(window.pageYOffset);
-           console.log(delta);
-           console.log('scrolling down !');
-
-          $("#h-header").removeClass("scrolledHeaderBackground");
-          $("#h-header-title").removeClass("scrolledAdventure");
-          $("#h-header-background").removeClass("scrolledMtnBackground");
-          $("#h-header-foreground").removeClass("scrolledFast");
-          $("#h-header-center").removeClass("scrolledSlow");
-          $("#h-header-title-wrap").removeClass("scrolledSmall");
-       } else if (delta > 150) {
-         console.log('Large');
-       }
-
-   });
-
-   // $('html').bind('mousewheel', function(e){
-   //         if(e.originalEvent.wheelDelta / 120 > 3) {
-   //             console.log('scrolling up !');
-   //         }
-   //         else{
-   //             console.log('scrolling down !');
-   //         }
-   //     });
+    if (iCurScrollPos > 1000) {
+      $(".navBar").addClass("scrolled");
+    } else {
+      $(".navBar").removeClass("scrolled");
+    }
+  });
 
 
 
 
-   // $(window).scroll(function(){
-   //   if ($(this).scrollTop() > 200) {
-   //     $("body").addClass("enableScroll");
-   //   }
-   // });
 
- }); /*Document Ready Close*/
+}); /*Document Ready Close*/
 
 
-//
-//
-//  $(window).scroll(function(){
-//   if ($(this).scrollTop() > 2700) {
-//     $(".insideBanner").addClass("animated bounce");
+
+
+
+
+
+
+
+
+
+
+
+
+// $('html').bind('wheel', function(e){
+//   console.log(e);
+//   var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+//   if(e.originalEvent.deltaY < -200) {
+//     console.log("time to scroll vertical")
 //   }
-// });
+//   else {
+//     console.log("scroll for depth");
 //
-// $(window).scroll(function(){
-//  if ($(this).scrollTop() < 2700) {
-//    $(".insideBanner").removeClass("animated bounce");
-//  }
+//     if (delta < 121) {
+//       console.log('scrolling up !');
+//
+//       // if (delta < 121 && x==="true") {
+//       $("#h-header").addClass("scrolledHeaderBackground");
+//       $("#h-header-title").addClass("scrolledAdventure");
+//       $("#h-header-background").addClass("scrolledMtnBackground");
+//       $("#h-header-foreground").addClass("scrolledFast");
+//       $("#h-header-center").addClass("scrolledSlow");
+//       $("#h-header-title-wrap").addClass("scrolledSmall");
+//     } else if (delta > 121) {
+//       console.log(window.pageYOffset);
+//       console.log(delta);
+//       console.log('scrolling down !');
+//
+//       $("#h-header").removeClass("scrolledHeaderBackground");
+//       $("#h-header-title").removeClass("scrolledAdventure");
+//       $("#h-header-background").removeClass("scrolledMtnBackground");
+//       $("#h-header-foreground").removeClass("scrolledFast");
+//       $("#h-header-center").removeClass("scrolledSlow");
+//       $("#h-header-title-wrap").removeClass("scrolledSmall");
+//     } else if (delta > 150) {
+//       console.log('Large');
+//     }
+//   };
 // });
-
-
-// }); /*Document Ready Close*/

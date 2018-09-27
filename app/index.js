@@ -11,19 +11,6 @@ import video from '../assets/images/video.mp4';
 import $ from 'jquery';
 
 
-function getopacity(elem) {
-  var ori = $(elem).css('opacity');
-  var ori2 = $(elem).css('filter');
-  if (ori2) {
-    ori2 = parseInt( ori2.replace(')','').replace('alpha(opacity=','') ) / 100;
-    if (!isNaN(ori2) && ori2 != '') {
-      ori = ori2;
-    }
-  }
-  return ori;
-}
-
-
 $(document).ready(function(){
 
 var iScrollPos = 0;
@@ -32,7 +19,7 @@ $("#h").scroll(function() {
   var iCurScrollPos = $(this).scrollTop();
   iScrollPos = iCurScrollPos;
   var windowHeight = $("#h").height();
-  var scrollPercent = iCurScrollPos / (5000 - windowHeight);
+  var scrollPercent = iCurScrollPos / (3500 - windowHeight);
   console.log(iScrollPos + "iScrollPos");
 
 

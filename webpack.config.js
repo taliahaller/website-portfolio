@@ -11,6 +11,13 @@ const dirAssets = path.join(__dirname, 'assets');
 
 const appHtmlTitle = 'Webpack Boilerplate';
 
+// const productionConfig = merge([
+//   {
+//     output: {
+//       publicPath: "/website-portfolio/",
+//     },
+//   },
+
 /**
  * Webpack Configuration
  */

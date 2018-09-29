@@ -46,6 +46,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  transform: translateY(-10%);
   align-items: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
@@ -89,11 +90,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: 4s;
   .menu-col-line-wrap {
     position: relative;
-    height: 100%;
     width: 1px;
     overflow: hidden;
+    animation: col-lines 1.75s ease-out forwards;
     .menu-col-line {
       position: absolute;
       top: 0;

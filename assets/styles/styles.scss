@@ -1,0 +1,64 @@
+// Colors
+$blue: #c2d4d9;
+$white: #f4f5f1;
+$navFill: #2b2d30;
+$aboutbg: #212121;
+$accentcolor: #a52c52;
+$dark: #212322;
+
+$fontLogo: 'Playfair Display SC', serif;
+$fontText: 'Dosis', sans-serif;
+$alternateFontText: 'Montserrat', sans-serif;
+
+// Mixins
+@mixin scrollAnimate2 {
+  transition: transform .25s, opacity 1s;
+  transition-timing-function: ease-out;
+}
+@mixin scrollAnimate {
+  transition: transform .25s, opacity .25s;
+  transition-timing-function: ease-out;
+}
+
+@mixin logoStyle {
+  color: white;
+  font-family: $fontLogo;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+// Element Styles
+html {
+  font-family: $alternateFontText;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 110%;
+  width: 100%;
+  // overflow: hidden;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a, img, section, svg, video {
+  display: block;
+}
+// Not sure how this will affect all elements
+
+p {
+  font-family: "Hiragino sans";
+  margin-block-start: 0;
+  margin-block-end: 0;
+}

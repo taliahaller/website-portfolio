@@ -1,73 +1,7 @@
-// Colors
-$blue: #c2d4d9;
-$white: #f4f5f1;
-$navFill: #2b2d30;
-$aboutbg: #212121;
-$linecolor: #a52c52;
-$dark: #212322;
-
-// Mixins
-@mixin logo-style {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    i {
-    font-size: 35px;
-    width: 30px;
-  }
-  p {
-    width: 60px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-  }
-}
-
-@mixin scrollAnimate2 {
-  transition: transform .25s, opacity 1s;
-  transition-timing-function: ease-out;
-}
-@mixin scrollAnimate {
-  transition: transform .25s, opacity .25s;
-  transition-timing-function: ease-out;
-}
-
-
-html {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 110%;
-  width: 100%;
-  // overflow: hidden;
-}
-
-img, video {
-  width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a, img, section, svg, video {
-  display: block;
-}
-// Not sure how this will affect all elements
-
-p {
-  font-family: "Hiragino sans";
-}
-
-#dummyParent {
-
-}
+@import "styles.scss";
+@import "animations.scss";
+@import "menu.scss";
+@import "footer.scss";
 
 #h-header-foreground-wrap, #h-header-center-wrap, #-header-background-wrap {
   @include scrollAnimate;
@@ -141,17 +75,24 @@ p {
   right: 0;
 }
 
+
+// Nav Bar
 .navBar {
 width: 100%;
-height: 80px;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 10;
+  .rectangle {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 100;
+    left: 0;
+    z-index: 1;
+  }
 }
 
 .scrolled {
+  .rectangle {
   background-color: $dark;
+  }
   #nav-logo, #nav-burger {
     animation: scale 1s ease-in forwards;
   }
@@ -159,28 +100,21 @@ z-index: 10;
 
 #nav-logo {
   position: fixed;
-  z-index: 1;
-  top: 27px;
-  left: 76px;
+  z-index: 2;
+  top: 23px;
+  left: 65px;
   width: 160px;
   height: 33px;
-  color: white;
-    div {
-      @include logo-style;
-      position: absolute;
-      top: 0;
-      left: 0;
-      i {
-        padding-right: 15px;
-      }
-    }
+  p {
+    @include logoStyle;
   }
+}
 
 #nav-burger {
   position: fixed;
   color: white;
-  z-index: 1;
-  top: 10px;
+  z-index: 2;
+  top: 7px;
   right: 30px;
   width: 200px;
   height: 70px;
@@ -200,114 +134,6 @@ z-index: 10;
     }
   }
 }
-
-// menu
-
-#menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-#menu-bg-wrap {
-  overflow: hidden;
-}
-
-#menu-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-#menu-bg-tilt {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  bottom: -50%;
-  right: -50%;
-  background-size: cover;
-  background-position: 50%;
-  background-image: url(./../images/menu-bg.jpg);
-}
-
-#menu-content, #menu-content-wrap {
-  display: flex;
-  justify-content: center;
-  align-items:
-}
-
-#menu-content-wrap {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-}
-
-.menu-col {
-  position: relative;
-  float: left;
-  width: 20vw;
-  .menu-link-container {
-    position: relative;
-    font-size: calc(.8rem + 2.4vh);
-    letter-spacing: -.025em;
-    color: white;
-    .menu-link-wrap {
-      position: relative;
-      margin: 0 0 1.05vh;
-      display: block;
-      overflow: hidden;
-    }
-  }
-}
-
-.menu-link-wrap:first-child .menu-link {
-  margin: 0;
-}
-
-.menu-link {
-  float: left;
-  padding: 0 8px;
-  line-height: 130%;
-  .menu-link-txt {
-    position: relative;
-    display: block;
-  }
-}
-
-.menu-col-line-container {
-  float: left;
-  width: 8.8vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .menu-col-line-wrap {
-    position: relative;
-    height: 100%;
-    width: 1px;
-    overflow: hidden;
-    .menu-col-line {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: #626265;
-    }
-  }
-}
-
-
-
 
 // About header
 
@@ -385,7 +211,7 @@ z-index: 10;
   height: 2px;
   overflow: hidden;
   .line-red {
-    background-color: $linecolor;
+    background-color: $accentcolor;
   }
   .line {
     position: absolute;
@@ -469,11 +295,12 @@ z-index: 10;
     font-size: 1.2vw;
     font-weight: 200;
     line-height: 180%;
+    margin-top: 1.4vw;
   }
 }
 
 .subtitle-red {
-  color: $linecolor;
+  color: $accentcolor;
 }
 
 .subtitle {
@@ -493,7 +320,7 @@ z-index: 10;
 }
 
 .btn-red {
-   border: 2px solid $linecolor;
+   border: 2px solid $accentcolor;
 }
 
 .btn {
@@ -508,7 +335,7 @@ z-index: 10;
 
 .btn-cover-red {
   display: none;
-  background-color: $linecolor;
+  background-color: $accentcolor;
 }
 
 .btn-cover {
@@ -583,211 +410,5 @@ z-index: 10;
     position: absolute;
     bottom: 15px;
     left: 15px;
-  }
-}
-
-//Get In Touch Banner
-.get-in-touch {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 1000px;
-  margin: 4.5em auto;
-  h2, .inputGroup {
-    min-width: 300px;
-  }
-  h2 {
-    margin-block-start: 0.2em;
-    margin-block-end: 0.2em;
-  }
-  .inputGroup {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    border-bottom: 2px solid $dark;
-    input {
-      padding: 14px 11px;
-      font-weight: 100;
-      letter-spacing: .05em;
-      font-size: calc(10px + .2vw);
-      border: none;
-      width: 100%;
-    }
-    img {
-      width: calc(15px + 1vw);
-      height: auto;
-    }
-  }
-}
-
-// Footer
-footer {
-  width: 100%;
-  background-color: $dark;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 30px 0;
-  flex-wrap: wrap;
-  .footer-column {
-    text-align: center;
-    min-width: 200px;
-    h3 {
-      font-size: 1.2em;
-      margin-block-end: .5em;
-    }
-    h5 {
-      line-height: 200%;
-      letter-spacing: 1px;
-      margin-block-start: 0em;
-      font-weight: 100;
-    }
-  }
-  #footer-logo {
-    div {
-      @include logo-style;
-      color: white;
-
-    }
-  }
-  .socialIcons {
-    display: flex;
-
-  }
-  i {
-    padding: 10px 15px;
-    font-size: 19px;
-    color: white;
-  }
-
-  i:hover {
-    color: lighten($linecolor, 30%);
-    text-decoration: none;
-  }
-}
-
-
-
-
-// Animation
-
-.scale {
-  animation: scale 3s ease-in forwards;
-}
-
-.scrolledFast {
-  animation: foreground 2s linear forwards;
-}
-
-.scrolledSlow {
-  animation: foreground 4s ease-in forwards;
-}
-
-.scrolledSmall {
-  animation: background1 4s ease-in forwards;
-}
-
-.scrolledAdventure {
-  animation: adventure 3s linear forwards;
-}
-.scrolledMtnBackground {
-  animation: headerMountains 4s linear forwards;
-}
-
-.scrolledHeaderBackground {
-  animation: header-background 4s ease-in forwards;
-}
-
-@keyframes foreground {
-  0% {
-    transform: translate(0px);
-    transform: scale(1);
-    opacity: 1;
-  }
-  // 50% {
-  //   transform: translate(0 3);
-  //   transform: scale(1.25);
-  //   opacity: 1;
-  // }
-  100% {
-    transform: translate(800px);
-    transform: scale(1.5);
-    opacity: .8;
-  }
-}
-
-@keyframes scrollToggle {
-  0% {
-    overflow: hidden;
-  }
-  100% {
-    overflow: visible;
-  }
-}
-
-
-@keyframes scale {
-  0% {
-    transform: scale(1) translateY(0px);
-  }
-  100% {
-    transform: scale(0.7) translateY(-30px);
-  }
-}
-
-@keyframes adventure {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  40% {
-    transform: translate(-4%);
-    transform: scale(1.07);
-    opacity: .8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: .1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-
-@keyframes headerMountains {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  75% {
-    transform: scale(1.2);
-    opacity: 1.8;
-  }
-  100% {
-    transform: scale(1.3);
-    opacity: 0;
-  }
-}
-
-@keyframes header-background {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1);
-    opacity: .8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
   }
 }

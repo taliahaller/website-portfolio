@@ -46,16 +46,21 @@ $(window).scroll(function() {
     }
     console.log(iCurScrollPos + "iCurScrollPos");
 
-    if (iCurScrollPos > 1000) {
+    if (iCurScrollPos > 10) {
       $(".navBar").addClass("scrolled");
+      $(".bar").addClass("rectangle animated fadeInDown");
     } else {
       $(".navBar").removeClass("scrolled");
+      $(".bar").removeClass("rectangle animated fadeInDown");
     }
   });
 
-
-
-
+  $("#nav-burger-line-container").click(function() {
+    $("#nav-burger-line-container").hide();
+    $("#menu").fadeToggle();
+    $("#menu-bg-tilt").toggleClass("slideOutUp");
+    $(".menu-col").toggleClass("fadeOutDown");
+  });
 
 }); /*Document Ready Close*/
 

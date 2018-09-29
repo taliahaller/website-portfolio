@@ -1,0 +1,119 @@
+// Animation
+
+.scale {
+  animation: scale 3s ease-in forwards;
+}
+
+.scrolledFast {
+  animation: foreground 2s linear forwards;
+}
+
+.scrolledSlow {
+  animation: foreground 4s ease-in forwards;
+}
+
+.scrolledSmall {
+  animation: background1 4s ease-in forwards;
+}
+
+.scrolledAdventure {
+  animation: adventure 3s linear forwards;
+}
+.scrolledMtnBackground {
+  animation: headerMountains 4s linear forwards;
+}
+
+.scrolledHeaderBackground {
+  animation: header-background 4s ease-in forwards;
+}
+
+@keyframes foreground {
+  0% {
+    transform: translate(0px);
+    transform: scale(1);
+    opacity: 1;
+  }
+  // 50% {
+  //   transform: translate(0 3);
+  //   transform: scale(1.25);
+  //   opacity: 1;
+  // }
+  100% {
+    transform: translate(800px);
+    transform: scale(1.5);
+    opacity: .8;
+  }
+}
+
+@keyframes scrollToggle {
+  0% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: visible;
+  }
+}
+
+
+@keyframes scale {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+  100% {
+    transform: scale(0.7) translateY(-40px);
+  }
+}
+
+@keyframes adventure {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-4%);
+    transform: scale(1.07);
+    opacity: .8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: .1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes headerMountains {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 1.8;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes header-background {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: .8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

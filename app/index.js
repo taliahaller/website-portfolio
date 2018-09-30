@@ -34,6 +34,11 @@ $("#h").scroll(function() {
     if (scrollPercent >= 99) {
       $("#h-header").css("opacity", 1);
     }
+    // if (iScrollPos >= 1300) {
+    //   $("#h").hide();
+    // } else {
+    //   $("#h").show();
+    // }
   });
 
   $(window).scroll(function() {
@@ -50,10 +55,16 @@ $("#h").scroll(function() {
     if (iCurScrollPos > 10) {
       $(".navBar").addClass("scrolled");
       $(".bar").addClass("rectangle animated fadeInDown");
-    } else {
+      if (iScrollPos >= 1300) {
+        $("#h").hide();
+      }
+    } else if (iCurScrollPos < 10){
       $(".navBar").removeClass("scrolled");
       $(".bar").removeClass("rectangle animated fadeInDown");
+      $("#h").show();
     }
+
+    console.log(iCurScrollPos + "iCurScrollPos");
   });
 
 

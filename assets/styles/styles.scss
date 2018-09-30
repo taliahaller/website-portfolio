@@ -9,6 +9,7 @@ $dark: #212322;
 $fontLogo: 'Playfair Display SC', serif;
 $fontText: 'Dosis', sans-serif;
 $alternateFontText: 'Montserrat', sans-serif;
+$otherFontText: 'Hiragino Sans';
 
 // Mixins
 @mixin scrollAnimate2 {
@@ -30,7 +31,7 @@ $alternateFontText: 'Montserrat', sans-serif;
 
 // Element Styles
 html {
-  font-family: $alternateFontText;
+  font-family: $otherFontText;
   font-size: 16px;
 }
 

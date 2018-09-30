@@ -3,6 +3,11 @@
 @import "menu.scss";
 @import "footer.scss";
 
+
+.noscroll {
+  overflow: hidden;
+}
+
 #h-header-foreground-wrap, #h-header-center-wrap, #-header-background-wrap {
   @include scrollAnimate;
 }
@@ -17,14 +22,14 @@
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
-  // padding-right: 17px;
+  padding-right: 17px;
   box-sizing: content-box;
   z-index: 1;
   // opacity: 0;
 }
 
 .child-container {
-  height: 3500px;
+  height: 4000px;
   width: 100%;
   position: absolute;
   overflow:hidden;

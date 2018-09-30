@@ -11,6 +11,8 @@ import video from '../assets/images/video.mp4';
 import $ from 'jquery';
 
 
+
+
 $(document).ready(function(){
 
 var iScrollPos = 0;
@@ -22,57 +24,58 @@ $("#h").scroll(function() {
   var scrollPercent = iCurScrollPos / (3500 - windowHeight);
   console.log(iScrollPos + "iScrollPos");
 
-
     $("#h-header").css("opacity" , (1-(scrollPercent*1.54)));
     $("#h-header-foreground-wrap").css("transform" , "translateX(" + (scrollPercent*900) + "px)    scale(" + (1+(1*scrollPercent)) + ")");
     $("#h-header-center-wrap").css("transform", "translateX(-" + (scrollPercent*700) + "px) scale(" + (1+(1*scrollPercent)) + ")");
     $("#h-header-background-wrap").css("transform", "translateX(" + (20 * scrollPercent) + "px) scale(" + (1+(.33*scrollPercent)) + ")");
     $("#h-header-center-wrap").css("opacity" , (1-(scrollPercent*1.54)));
     $("#h-header-foreground-wrap").css("opacity" , (1-(scrollPercent*2)));
-    console.log((1-scrollPercent));
-    if (scrollPercent >= 1) {
-      $("#h-header").css("opacity", 0);
-    }
-  });
-
-$(window).scroll(function() {
-    var iCurScrollPos = $(this).scrollTop();
-    if (iCurScrollPos === 0) {
+    console.log((1 - scrollPercent));
+    if (scrollPercent >= 99) {
       $("#h-header").css("opacity", 1);
-    } else {
-      $("#h-header").css("opacity", 0);
-      $(".nav-color-dark").addClass(".nav-color-light");
-      $(".nav").removeClass(".nav-color-dark");
     }
-    console.log(iCurScrollPos + "iCurScrollPos");
+  });
 
+  $(window).scroll(function() {
+    var iCurScrollPos = $(this).scrollTop();
 
-      if (iCurScrollPos > 10) {
-        $(".navBar").addClass("scrolled");
-        $(".bar").addClass("rectangle animated fadeInDown");
-      } else {
-        $(".navBar").removeClass("scrolled");
-        $(".bar").removeClass("rectangle animated fadeInDown");
-      }
+    // if (iCurScrollPos === 0) {
+    //   $("#h-header").css("opacity", 1);
+    // } else {
+    //   $("#h-header").css("opacity", 0);
+    // }
+    // console.log(iCurScrollPos + "iCurScrollPos");
+    // console.log(iScrollPos2 + "iScrollPos");
 
-      // if ($("#menu").is('hidden')) {
-      //   $(".navBar").removeClass("scrolled");
-      //   $(".bar").removeClass("rectangle animated fadeInDown");
-      // } else if (iCurScrollPos > 10) {
-      //   $(".navBar").addClass("scrolled");
-      //   $(".bar").addClass("rectangle animated fadeInDown");
-      // }
-
+    if (iCurScrollPos > 10) {
+      $(".navBar").addClass("scrolled");
+      $(".bar").addClass("rectangle animated fadeInDown");
+    } else {
+      $(".navBar").removeClass("scrolled");
+      $(".bar").removeClass("rectangle animated fadeInDown");
+    }
   });
 
 
-  $("#nav-burger-line-container").click(function() {
-    $("#nav-toggle").toggleClass("active");
-    $("#menu").fadeToggle();
-    $("#menu-bg-tilt").toggleClass("slideOutUp");
-    $(".menu-col").toggleClass("fadeOutDown");
-  });
+  // if(!$('#menu').is('visible')) {
+  //   $("body").addClass("noscroll");
+  // }
 
+// Hamburger to X Animation
+  // $("#nav-burger-line-container").click(function() {
+  //   $("#nav-toggle").toggleClass("active");
+  //   $("#menu").fadeToggle();
+  //   $("#menu-bg-tilt").toggleClass("slideOutUp");
+  //   $(".menu-col").toggleClass("fadeOutDown");
+  // });
+
+  // if ($("#menu").is('hidden')) {
+  //   $(".navBar").removeClass("scrolled");
+  //   $(".bar").removeClass("rectangle animated fadeInDown");
+  // } else if (iCurScrollPos > 10) {
+  //   $(".navBar").addClass("scrolled");
+  //   $(".bar").addClass("rectangle animated fadeInDown");
+  // }
 // if (!$('#menu').is('hidden')) {
 //   $("#nav-burger-line-container").click(function() {
 //     $("#menu").fadeUpToggle();

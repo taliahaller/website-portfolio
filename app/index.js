@@ -62,24 +62,27 @@ $("#h").scroll(function() {
   // }
 
 // Hamburger to X Animation
-  // $("#nav-burger-line-container").click(function() {
-  //   $("#nav-toggle").toggleClass("active");
-  //   $("#menu").fadeToggle();
-  //   $("#menu-bg-tilt").toggleClass("slideOutUp");
-  //   $(".menu-col").toggleClass("fadeOutDown");
-  // });
+  $("#nav-burger-line-container").click(function() {
+    $("#nav-toggle").toggleClass("active");
+    $("#menu").fadeToggle();
+    $("#menu-bg-tilt").toggleClass("slideOutUp");
+    $(".menu-col").toggleClass("fadeOutDown");
+  });
 
-  // if ($("#menu").is('hidden')) {
-  //   $(".navBar").removeClass("scrolled");
-  //   $(".bar").removeClass("rectangle animated fadeInDown");
-  // } else if (iCurScrollPos > 10) {
-  //   $(".navBar").addClass("scrolled");
-  //   $(".bar").addClass("rectangle animated fadeInDown");
-  // }
-// if (!$('#menu').is('hidden')) {
-//   $("#nav-burger-line-container").click(function() {
-//     $("#menu").fadeUpToggle();
-//   });
+  if ($("#menu").is('hidden')) {
+    $(".navBar").removeClass("scrolled");
+    $(".bar").removeClass("rectangle animated fadeInDown");
+    $("body").removeClass("noscroll");
+  } else if (iCurScrollPos > 10) {
+    $(".navBar").addClass("scrolled");
+    $(".bar").addClass("rectangle animated fadeInDown");
+  }
+if (!$('#menu').is('hidden')) {
+  $("#nav-burger-line-container").click(function() {
+    $("#menu").fadeUpToggle();
+    $(body).addClass("noscroll");
+  });
+}
 
 // if (!$('#menu').is('visible')) {
 //   $("#nav-burger").click(function() {

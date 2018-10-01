@@ -1,0 +1,78 @@
+// Code From https://www.sitepoint.com/building-3d-rotating-carousel-css-javascript/
+
+$n: 8;
+$image-width: 800px;
+$item-separation: 200px;
+$viewer-distance: 1000px;
+
+$pi: 3.141592653589793;
+// $apothem: 482.842712474619px; //$image-width / (2 * tan($pi/$n));
+// $apothem: ($image-width / 2*tan($pi/$n));
+$apothem: $image-width / (2*0.41421356);
+// $apothem: 800px;
+$theta: 2 * $pi / $n;
+
+
+.bodyClass {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+  align-content: center;
+  background-color: lighten($dark, 20%);
+}
+
+.carousel {
+  padding: 20px;
+  perspective: $viewer-distance;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  > * {
+     flex: 0 0 auto;
+  }
+}
+
+figure {
+  margin: 0;
+  width: $image-width;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform-origin: 50% 50% (-$apothem);
+  .not-first {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 50% 50% (-$apothem);
+  }
+  .carousel-img {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 $item-separation / 2;
+    // opacity: 0.5; //take off eventually
+    @for $i from 2 through $n {
+      &:nth-child(#{$i}) {
+        // transform: rotateY(#{($i -1) * $theta} + rad);
+        transform: rotateY(#{($i - 1) * $theta}rad);
+      }
+    }
+  }
+}
+
+.navigation {
+display: flex;
+justify-content: center;
+height: 2.5em;
+  .nav {
+    width:100px;
+    background-color: lighten($accentcolor, 40%);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+  }
+  .prev {
+    margin-right: 30px;
+  }
+}

@@ -1,7 +1,9 @@
 @import "styles.scss";
 @import "animations.scss";
 @import "menu.scss";
+@import "carousel.scss";
 @import "footer.scss";
+
 
 
 .noscroll {
@@ -17,6 +19,7 @@
 }
 
 #h {
+  display: none;
   width: 100%;
   height: 100vh;
   position: fixed;

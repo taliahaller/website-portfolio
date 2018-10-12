@@ -1,5 +1,9 @@
 // menu
 
+a {
+  cursor: default;
+}
+
 #menu {
   display: none;
   position: fixed;
@@ -69,6 +73,7 @@
     margin: 0 0 1.3vh;
     text-align: center;
     margin: 0px 30px 38px 30px;
+    }
   }
   .menu-link-container:first-of-type {
     color: $accentcolor;
@@ -79,14 +84,26 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+
+.menu-link:hover {
+  color: white;
 }
+
+.menu-link-title:hover {
+  color: $accentcolor;
+}
+
 .small {
 color: gray;
   a:hover {
     color: lighten($accentcolor, 40%);
+    cursor: pointer;
   }
   }
 
+#about-menu-title {
+    color: lighten($accentcolor, 40%);
+  }
 
 .menu-col-line-container {
   width: 8.8vw;

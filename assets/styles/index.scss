@@ -227,9 +227,9 @@ width: 100%;
 #h-intro-txt {
   position: relative;
   height: 150px;
-  top: 49%;
+  top: calc(150px + 41%);
   left: -100px;
-  margin: 0 0 0 -1.825vw;
+  margin: 0 0 0 calc(45px + -1.525vw);
   color: white;
 }
 
@@ -275,7 +275,7 @@ width: 100%;
 }
 
 .p-l {
-  font-size: 1.5vw;
+  font-size: calc(7px + .5vw;
   letter-spacing: 0.02em;
   line-height: 200%;
   font-weight: 100;
@@ -435,7 +435,7 @@ width: 100%;
   margin: 0 auto 2.5em auto;
   overflow: hidden;
   .portfolio-image {
-    min-width: 320px;
+    min-width: 270px;
     width: 30%;
     height: auto;
     overflow: hidden;
@@ -447,7 +447,7 @@ width: 100%;
 
 .portfolio-image {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .h-blog-txt {
@@ -476,9 +476,18 @@ width: 100%;
 
 
 //Media Queries
-//
+
+@media screen and (max-width: 1000px) {
+  #h-blog-drag .portfolio-image {
+  min-width: 500px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #nav-explore-wrap {
   display: none;
+  }
+  #h-blog-drag .portfolio-image {
+  min-width: 302px;
   }
 }

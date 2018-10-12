@@ -352,7 +352,7 @@ width: 100%;
 }
 
 .subtitle {
-  font-size: 1.25vw;
+  font-size: calc(10px + .5vw);
   padding: 0 0 1.146vw;
 }
 
@@ -370,6 +370,7 @@ width: 100%;
 .btn-red {
    border: 2px solid $accentcolor;
    color: $accentcolor;
+   font-size: 1vw;
 }
 
 .btn {
@@ -378,9 +379,6 @@ width: 100%;
   height: 100%;
   box-sizing: border-box;
   text-align: center;
-    span {
-      font-size: 1vw;
-    }
 }
 
 .btn-hover {
@@ -407,15 +405,15 @@ width: 100%;
   background-color: $dark;
   overflow: hidden;
 }
-#h-blog-titile-wrap {
-  width: 100%;
-  height: 11.61vw;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
+// #h-blog-title-wrap {
+//   width: 100%;
+//   height: 11.61vw;
+//   display: flex;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   -webkit-box-pack: center;
+//   justify-content: center;
+// }
 #h-blog-title {
   text-align: center;
   .subtitle {
@@ -426,13 +424,13 @@ width: 100%;
     margin-bottom: 4vw;
   }
 }
-//
+
 #h-blog-drag {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
   margin: 0 auto 2.5em auto;
   overflow: hidden;
@@ -449,6 +447,7 @@ width: 100%;
 
 .portfolio-image {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .h-blog-txt {
@@ -457,11 +456,29 @@ width: 100%;
   left: 0px;
   color: white;
   width: 100%;
-  height: 55px;
-  background-color: rgba(0,0,0,.6);
+  height: 95px;
+  background-color: rgba(0,0,0,.75);
   .h-blog-li-txt-title {
     position: absolute;
-    bottom: 15px;
+    bottom: 65PX;
     left: 15px;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 100;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    max-width: 90%;
+  }
+}
+
+
+
+//Media Queries
+//
+@media screen and (max-width: 600px) {
+  #nav-explore-wrap {
+  display: none;
   }
 }
